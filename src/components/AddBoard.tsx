@@ -15,14 +15,14 @@ const AddButton = styled.button`
   background-color: transparent;
   border: none;
   &:hover {
-    color: #ffeaa7;
+    background-color: linear-gradient(to right, pink, skyblue);
   }
   transition: color 0.3s ease-in-out;
 `;
 
 const AddButtonIcon = styled(FaCirclePlus)`
-  width: 50px;
-  height: 50px;
+  width: 3.2em;
+  height: 3.2em;
   display: flex;
   cursor: pointer;
 `;

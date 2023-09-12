@@ -60,7 +60,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 	body {
 	font-family: 'Open Sans', sans-serif; // Font-URL at 'index.html'
-	background-color: ${(props) => props.theme.bgColor};
+	background-color: #008183;
 	color: black;
 	}
 	a {

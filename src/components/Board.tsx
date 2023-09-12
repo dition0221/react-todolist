@@ -10,44 +10,42 @@ import DraggableCard from "./DraggableCard";
 
 const Wrapper = styled.section`
   width: 300px;
-  padding-top: 10px;
-  background-color: ${(props) => props.theme.boardColor};
-  /* background-color 수정하기 */
-  border-radius: 5px;
   min-height: 300px;
   display: flex;
   flex-direction: column;
-  border: 2px solid ${(props) => props.theme.boardColor};
+  border: 3px solid ${(props) => props.theme.boardColor};
+  box-shadow: 2px 2px 1px black;
 `;
 
 const Header = styled.header`
+  background: linear-gradient(to right, rgb(0, 0, 128), rgb(16, 132, 208));
+  padding: 3px 10px;
+  border-bottom: 3px solid ${(props) => props.theme.boardColor};
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  margin-bottom: 5px;
   div {
     display: flex;
     align-items: center;
   }
-  /* TODO : Windows98 스타일로 꾸미기 */
-  /* TODO : 보드의 body부분 Droppable 영역 고치기 */
 `;
 
 const FolderIcon = styled(FaRegFolderOpen)`
-  margin-right: 8px;
+  margin-right: 5px;
+  color: #fffb9d;
 `;
 
 const DeleteButton = styled.button`
   border: none;
-  background-color: transparent;
+  padding: 0;
+  background-color: ${(props) => props.theme.boardColor};
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const DeleteButtonIcon = styled(FaXmark)`
-  font-size: 22px;
+  font-size: 18px;
   cursor: pointer;
   &:hover {
     color: red;
@@ -59,14 +57,18 @@ const Title = styled.h2`
   text-align: center;
   font-weight: 600;
   font-size: 18px;
+  color: white;
 `;
 
 const Form = styled.form`
   width: 100%;
-  padding: 0 20px;
-  margin-bottom: 10px;
+  padding: 5px 20px 5px;
+  border-bottom: 3px solid ${(props) => props.theme.boardColor};
   input {
     width: 100%;
+    &::placeholder {
+      font-style: italic;
+    }
   }
 `;
 
@@ -76,14 +78,14 @@ interface IAreaProps {
 }
 
 const Area = styled.article<IAreaProps>`
-  padding: 0 20px;
-  padding-top: 10px;
+  padding: 10px;
   background-color: ${(props) =>
     props.$isDraggingOver
       ? "#ffeaa7"
       : props.$isDraggingFromThis
       ? "#b2bec3"
-      : "whitesmoke"};
+      : "#fefefe"};
+  border: 1px solid rgba(0, 0, 0, 0.3);
   flex-grow: 1;
   transition: background-color 0.2s ease-in-out;
 `;

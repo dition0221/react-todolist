@@ -4,12 +4,17 @@ import { styled } from "styled-components";
 
 const Card = styled.div<{ $isDragging: boolean }>`
   padding: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   border-radius: 5px;
-  background-color: ${(props) =>
-    props.$isDragging ? "#74b9ff" : props.theme.cardColor};
+  background: ${(props) =>
+    props.$isDragging
+      ? "linear-gradient(to right, pink, skyblue)"
+      : "linear-gradient(to right, #dfe6e9, #b2bec3)"};
   box-shadow: ${(props) =>
-    props.$isDragging ? "0 2px 5px rgba(0, 0, 0, 0.05)" : "none"};
+    props.$isDragging ? "0 3px 5px rgba(0, 0, 0, 0.3)" : "none"};
+  border: 1px solid
+    ${(props) => (props.$isDragging ? "#a29bfe" : "rgba(0, 0, 0, 0.3)")};
+  font-weight: 500;
 `;
 
 interface IDraggableCardProps {

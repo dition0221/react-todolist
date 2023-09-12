@@ -9,8 +9,8 @@ const TrashCanWrapper = styled.footer`
 `;
 
 const TrashCanIcon = styled(FaRegTrashCan)<{ $isDraggingOver: boolean }>`
-  width: 50px;
-  height: 50px;
+  width: 3.2em;
+  height: 3.2em;
   color: ${(props) => (props.$isDraggingOver ? "#ffeaa7" : "none")};
   transition: color 0.2s ease-in-out;
 `;

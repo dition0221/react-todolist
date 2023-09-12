@@ -22,6 +22,7 @@ const Boards = styled.main`
   justify-content: center;
   width: 100%;
   gap: 10px;
+  flex-wrap: wrap;
 `;
 
 function App() {
