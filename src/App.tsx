@@ -10,7 +10,8 @@ import TrashCan from "./components/TrashCan";
 
 const Wrapper = styled.div`
   width: 100%;
-  margin: 5vh auto;
+  min-height: 100vh;
+  padding: 3vh 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +22,7 @@ const Boards = styled.main`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
 `;
 

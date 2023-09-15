@@ -289,18 +289,26 @@
     - 해결 방법 : '.index' 프로퍼티를 이용해서 item을 찾기
       - 'source.index'를 통해 타겟(Object)을 찾은 후 사용
 - **23-09-09 ~ 10 : Code Challenge(2 ~ 3)**
-  - Local Storage 사용
-  - 쓰레기통 생성 / to-do 삭제 기능 추가
-  - to-do 보드를 추가하는 모달박스(밑바탕) 구현
+  - Update
+    - Local Storage 기능 추가
+    - 쓰레기통 생성 / to-do 삭제 기능 추가
+    - to-do 보드를 추가하는 모달박스(밑바탕) 구현
 - **23-09-12 : Code Challenge(4)**
-  - 스타일링 : windows98 스타일
+  - Styling : windows98 스타일
 - **23-09-15 : Code Challenge(5)**
-  - Fix : to-do 보드가 여러 개 일때, 맨위/맨아래 부분이 잘리는 현상 수정
+  - Fix
+    - to-do 보드가 여러 개 일때, 맨위/맨아래 부분이 잘리는 현상 수정
+      - Flex-Container에 'min-height'와 'padding' 할당
+  - Update
+    - 보드 삭제 기능 추가
+      - spread 문법을 사용한 후, 'useSetRecoilState()'의 set함수 사용
+    - 보드 추가 시 중복값, 빈값 예외 처리
+      - 문제 : 중복값 시 데이터가 덮어씌워짐
+      - 해결 : 'React-Hook-Form'의 errors 이용
 
 ---
 
-<!-- TODO : 꾸미기(window98 스타일) / 보드삭제 버튼 생성하기 / 보드 생성 버튼 색깔 넣기 / 모바일 화면 조절하기 -->
-<!-- *DONE : Local Storage 사용 / 삭제 및 쓰레기통 / 리스트 추가하는 폼(모달박스) -->
+<!-- TODO : 꾸미기(window98 스타일) / 보드 생성 버튼 색깔 넣기 -->
 
 노마드 코더 정책 상 강의요약은 괜찮으나, 코드와 필기는 공개적인 곳에 올리면 안 됨.  
 필기 요약지는 암호화된 .zip 파일로 저장함.

@@ -77,10 +77,8 @@ const Form = styled.form`
 `;
 
 const DownIcon = styled(FaCaretDown)`
-  height: 100%;
-  font-size: 18px;
+  height: 21px;
   border: 1px solid rgba(0, 0, 0, 0.5);
-  border-left: none;
 `;
 
 interface IAreaProps {
@@ -128,9 +126,12 @@ export default function Board({ toDos, boardId }: IBoardProps) {
     reset();
   };
 
-  // TODO : Delete button
-  const onDelete = (event: React.MouseEvent<HTMLButtonElement>) =>
-    console.log(event);
+  const onDelete = () => {
+    setToDoState((allBoards) => {
+      const { [boardId]: _, ...newToDoState } = allBoards; // delete
+      return newToDoState;
+    });
+  };
 
   return (
     <Wrapper>

@@ -64,12 +64,26 @@ function AddBoard() {
       setIsModalOpen(false);
     }
   };
+
   /* form */
-  const { register, handleSubmit, reset } = useForm<IForm>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+    setError,
+  } = useForm<IForm>();
   const [toDoList, setToDoList] = useRecoilState(toDoState);
+
   // Add new board to 'toDoState'
   const onValid = ({ keyName }: IForm) => {
     const toDoListCopy = { ...toDoList };
+    // Error : 중복
+    if (Object.keys(toDoListCopy).includes(keyName)) {
+      setError("keyName", { message: "Not allow duplicate values." });
+      return;
+    }
+    // Success
     toDoListCopy[keyName] = [];
     setToDoList(toDoListCopy); // Add new board
     reset();
@@ -88,11 +102,14 @@ function AddBoard() {
             <Title>Add Board</Title>
             <form onSubmit={handleSubmit(onValid)}>
               <input
-                {...register("keyName", { required: true })}
+                {...register("keyName", {
+                  required: "Not allow empty values.",
+                })}
                 type="text"
                 placeholder="Write title of board"
               />
             </form>
+            <span>{errors.keyName?.message}</span>
           </ModalWindow>
         </ModalOverlay>
       ) : null}
