@@ -2,7 +2,7 @@ import { Droppable } from "@hello-pangea/dnd";
 import { styled } from "styled-components";
 import { useForm } from "react-hook-form";
 import { useSetRecoilState } from "recoil";
-import { FaXmark, FaRegFolderOpen } from "react-icons/fa6";
+import { FaXmark, FaRegFolderOpen, FaCaretDown } from "react-icons/fa6";
 // Interface & Atoms
 import { IToDo, toDoState } from "../atoms";
 // Components
@@ -39,6 +39,7 @@ const DeleteButton = styled.button`
   border: none;
   padding: 0;
   background-color: ${(props) => props.theme.boardColor};
+  box-shadow: 0 0 4px black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,14 +63,24 @@ const Title = styled.h2`
 
 const Form = styled.form`
   width: 100%;
-  padding: 5px 20px 5px;
-  border-bottom: 3px solid ${(props) => props.theme.boardColor};
+  padding: 5px 8px 5px;
+  background-color: ${(props) => props.theme.boardColor};
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
   input {
     width: 100%;
     &::placeholder {
       font-style: italic;
     }
   }
+`;
+
+const DownIcon = styled(FaCaretDown)`
+  height: 100%;
+  font-size: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-left: none;
 `;
 
 interface IAreaProps {
@@ -86,6 +97,7 @@ const Area = styled.article<IAreaProps>`
       ? "#b2bec3"
       : "#fefefe"};
   border: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: 3px solid ${(props) => props.theme.boardColor};
   flex-grow: 1;
   transition: background-color 0.2s ease-in-out;
 `;
@@ -116,6 +128,10 @@ export default function Board({ toDos, boardId }: IBoardProps) {
     reset();
   };
 
+  // TODO : Delete button
+  const onDelete = (event: React.MouseEvent<HTMLButtonElement>) =>
+    console.log(event);
+
   return (
     <Wrapper>
       <Header>
@@ -123,17 +139,20 @@ export default function Board({ toDos, boardId }: IBoardProps) {
           <FolderIcon />
           <Title>{boardId}</Title>
         </div>
-        <DeleteButton>
+        <DeleteButton onClick={onDelete}>
           <DeleteButtonIcon />
         </DeleteButton>
       </Header>
+
       <Form onSubmit={handleSubmit(onValid)}>
         <input
           {...register("toDo", { required: true })}
           type="text"
           placeholder={`Add task on ${boardId}`}
         />
+        <DownIcon />
       </Form>
+
       <Droppable droppableId={boardId}>
         {(provided, snapshot) => (
           <Area

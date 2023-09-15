@@ -6,8 +6,6 @@ import { useRecoilState } from "recoil";
 // Interface & Atoms
 import { toDoState } from "../atoms";
 
-// * 모달박스를 통해 새로운 Board를 생성함
-
 const AddButton = styled.button`
   position: fixed;
   top: 25px;
