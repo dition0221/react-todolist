@@ -4,13 +4,13 @@ import { FaRegTrashCan } from "react-icons/fa6";
 
 const TrashCanWrapper = styled.footer`
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 25px;
+  right: 25px;
 `;
 
 const TrashCanIcon = styled(FaRegTrashCan)<{ $isDraggingOver: boolean }>`
-  width: 3.2em;
-  height: 3.2em;
+  width: 3em;
+  height: 3em;
   color: ${(props) => (props.$isDraggingOver ? "#ffeaa7" : "none")};
   transition: color 0.2s ease-in-out;
 `;

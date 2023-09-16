@@ -12,43 +12,90 @@ const AddButton = styled.button`
   right: 25px;
   background-color: transparent;
   border: none;
-  &:hover {
-    background-color: linear-gradient(to right, pink, skyblue);
-  }
-  transition: color 0.3s ease-in-out;
-`;
-
-const AddButtonIcon = styled(FaCirclePlus)`
-  width: 3.2em;
-  height: 3.2em;
+  padding: 0;
   display: flex;
   cursor: pointer;
 `;
 
+const AddButtonIcon = styled(FaCirclePlus)`
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  &:hover {
+    color: #fffb9d;
+    box-shadow: 0 0 10px 1px #fffb9d;
+  }
+  transition: all 0.3s ease-in-out;
+`;
+
 const ModalOverlay = styled.div`
   width: 100%;
-  height: 100vh;
-  position: absolute;
+  height: 100%;
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(3px);
+  z-index: 99;
 `;
 
 const ModalWindow = styled.div`
-  width: 30%;
-  height: 50%;
-  background-color: #dfe6e9;
-  border-radius: 30px;
-  padding-top: 20px;
+  width: 300px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  background-color: ${(props) => props.theme.boardColor};
+  border: 3px solid ${(props) => props.theme.boardColor};
+  box-shadow: 2px 2px 1px black;
 `;
 
 const Title = styled.h2`
+  background: linear-gradient(to right, rgb(0, 0, 128), rgb(16, 132, 208));
+  color: white;
+  font-size: 24px;
   text-align: center;
   font-weight: 600;
-  margin-bottom: 10px;
-  font-size: 24px;
+  padding: 3px 0;
+  margin-bottom: 30px;
+`;
+
+const Form = styled.form`
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  margin-bottom: 15px;
+  input {
+    width: 100%;
+    height: 25px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    padding-left: 10px;
+    &::placeholder {
+      font-size: 16px;
+      font-style: italic;
+    }
+  }
+  button {
+    background-color: ${(props) => props.theme.boardColor};
+    height: 100%;
+    margin-left: 10px;
+    cursor: pointer;
+    &::first-letter {
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+  }
+`;
+
+const ErrorSpan = styled.span`
+  text-align: center;
+  font-weight: 600;
+  color: red;
+  text-decoration: underline;
 `;
 
 interface IForm {
@@ -96,20 +143,26 @@ function AddBoard() {
       <AddButton onClick={openModal}>
         <AddButtonIcon />
       </AddButton>
+
       {isModalOpen ? (
         <ModalOverlay onClick={closeModal}>
           <ModalWindow>
             <Title>Add Board</Title>
-            <form onSubmit={handleSubmit(onValid)}>
+            <Form onSubmit={handleSubmit(onValid)}>
               <input
                 {...register("keyName", {
                   required: "Not allow empty values.",
+                  maxLength: {
+                    value: 12,
+                    message: "The maximum input character is 12.",
+                  },
                 })}
                 type="text"
                 placeholder="Write title of board"
               />
-            </form>
-            <span>{errors.keyName?.message}</span>
+              <button>Save</button>
+            </Form>
+            <ErrorSpan>{errors.keyName?.message}</ErrorSpan>
           </ModalWindow>
         </ModalOverlay>
       ) : null}

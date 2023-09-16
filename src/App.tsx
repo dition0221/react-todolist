@@ -1,12 +1,15 @@
 import { DragDropContext, DropResult } from "@hello-pangea/dnd";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useRecoilState } from "recoil";
 // Atoms
 import { toDoState } from "./atoms";
+// Images
+import windows98 from "./images/windows98.jpg";
 // Components
 import Board from "./components/Board";
 import AddBoard from "./components/AddBoard";
 import TrashCan from "./components/TrashCan";
+import { useEffect, useState } from "react";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -15,6 +18,24 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const fadeOutAnime = keyframes`
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+`;
+
+const FADE_OUT_ANIME_TIME = 1;
+
+const ImgWindows98 = styled.img`
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  object-fit: cover;
+  z-index: 99;
+  animation: ${fadeOutAnime} ${FADE_OUT_ANIME_TIME * 0.4}s ease-in-out
+    ${FADE_OUT_ANIME_TIME * 0.7}s;
 `;
 
 const Boards = styled.main`
@@ -68,8 +89,19 @@ function App() {
     }
   };
 
+  // ImgWindows98
+  const [isExist, setIsExist] = useState(true);
+  useEffect(() => {
+    const imgFadeOut = setTimeout(
+      () => setIsExist(false),
+      FADE_OUT_ANIME_TIME * 1000
+    );
+    return () => clearTimeout(imgFadeOut);
+  }, []);
+
   return (
     <Wrapper>
+      {isExist ? <ImgWindows98 src={windows98} /> : null}
       <AddBoard />
       <DragDropContext onDragEnd={onDragEnd}>
         <Boards>
