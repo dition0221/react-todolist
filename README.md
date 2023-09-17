@@ -315,6 +315,14 @@
   - Fix
     - 'flex-wrap: wrap'으로 인해 화면의 세로가 길어질 시 모달박스가 화면 전체를 가리지 못하는 현상 수정
       - 'position: fixed' 사용
+    - 휴대기기에서 보드를 추가하는 모달박스를 연 후에 아래로 드래그 시
+      주소창과 메뉴창이 없어지면서 화면이 넒어질 때
+      해당 높이만큼 백그라운드 blur가 적용이 되지 않는 현상 수정
+      - height: 100% -> 100vh
+- **23-09-17 : Code Challenge(7)**
+  - Update
+    - title, favicon, description 업데이트
+    <!-- TODO : meta 미리보기 이미지 띄우기 -->
 
 ---
 

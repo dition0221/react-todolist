@@ -15,6 +15,7 @@ const Card = styled.div<{ $isDragging: boolean }>`
   border: 1px solid
     ${(props) => (props.$isDragging ? "#a29bfe" : "rgba(0, 0, 0, 0.3)")};
   font-weight: 500;
+  line-height: 110%;
 `;
 
 interface IDraggableCardProps {
