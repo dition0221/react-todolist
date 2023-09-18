@@ -2,9 +2,33 @@
 
 ### React와 Drag & Drop 기능을 사용한 To-Do List 사이드 프로젝트입니다.
 
-<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/Styled&dash;Components-DB7093?style=flat-square&logo=styledcomponents&logoColor=white"/>  
-<img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white"/> <img src="https://img.shields.io/badge/Recoil-3578E5?style=flat-square&logo=recoil&logoColor=white"/> <img src="https://img.shields.io/badge/React&dash;Hook&dash;Form-EC5990?style=flat-square&logo=reacthookform&logoColor=white"/>  
-<img src="https://img.shields.io/badge/Recoil&dash;Persist-3578E5?style=flat-square&logoColor=white"/> <img src="https://img.shields.io/badge/@hello&dash;pangea/dnd-0BAF7C?style=flat-square&logoColor=white"/>
+React : <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/Styled&dash;Components-DB7093?style=flat-square&logo=styledcomponents&logoColor=white"/>  
+Framework : <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white"/> <img src="https://img.shields.io/badge/Recoil-3578E5?style=flat-square&logo=recoil&logoColor=white"/> <img src="https://img.shields.io/badge/React&dash;Hook&dash;Form-EC5990?style=flat-square&logo=reacthookform&logoColor=white"/> <img src="https://img.shields.io/badge/Recoil&dash;Persist-3578E5?style=flat-square&logoColor=white"/> <img src="https://img.shields.io/badge/@hello&dash;pangea/dnd-0BAF7C?style=flat-square&logoColor=white"/>
+
+![thumbnail](https://github.com/dition0221/dition0221/assets/129196812/c52368de-2465-4eb8-980a-f31d8397fcd3)
+
+---
+
+**✨ 결과물 : https://dition0221.github.io/react-todolist/**
+
+> ![image](https://github.com/dition0221/dition0221/assets/129196812/cfc9d969-b0bb-4be7-892a-d17c62611d34)
+>
+> \#React \#TypeScript \#Styled-Components
+> **Drag&Drop** 기능을 이용해 간단하게 꾸밀 수 있는 **'To-Do List'** 사이트입니다.
+> 여러 개의 Board와 To-Do를 입력할 수 있으며, 자동으로 **Local Storage**에 저장 및 불러옵니다.
+> 처음 접속 시 사용자에게 Tutorial을 보여줍니다.
+> 모바일 기기에서도 잘 보이게끔 **반응형 디자인**을 적용하였으며, 전체적으로 Windows98 느낌이 나도록 꾸몄습니다.
+>
+> - < How to Use? >
+> - [보드 추가] 우측 상단의 '+' 버튼을 통해 새로운 보드를 추가할 수 있습니다.
+> - [보드 삭제] 보드의 'x' 버튼을 클릭해 보드를 삭제할 수 있습니다.
+> - [To-Do 추가] 보드 상단 input에서 입력해 To-Do를 추가할 수 있습니다.
+> - [To-Do 순서 변경] To-Do를 드래그하여 순서를 변경할 수 있습니다.
+> - [To-Do 삭제] To-Do를 쓰레기통에 Drag&Drop으로 삭제할 수 있습니다.
+>
+> ![썸네일 나오는거](https://github.com/dition0221/dition0221/assets/129196812/51fdc909-dced-451a-85d7-96fb548de606)
+>
+> **'Rich Link Preview'** 기능을 사용해 카카오톡, 디스코드 등의 플랫폼에서 URL을 공유 시 해당 URL에 대한 풍부한 정보를 제공합니다.
 
 ---
 
@@ -320,9 +344,11 @@
       해당 높이만큼 백그라운드 blur가 적용이 되지 않는 현상 수정
       - height: 100% -> 100vh
 - **23-09-17 : Code Challenge(7)**
+  - Update : title, favicon, description 업데이트
+- **23-09-18 : Code Challenge(8)**
   - Update
-    - title, favicon, description 업데이트
-    <!-- TODO : meta 미리보기 이미지 띄우기 -->
+    - [Rich Link Preview] URL 공유 시 '제목, 설명, 썸네일' 업데이트 (og, twitter, fb)
+    - README 파일 업데이트
 
 ---
 
