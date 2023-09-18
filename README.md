@@ -13,10 +13,10 @@ Framework : <img src="https://img.shields.io/badge/Node.js-339933?style=flat-squ
 
 > ![image](https://github.com/dition0221/dition0221/assets/129196812/cfc9d969-b0bb-4be7-892a-d17c62611d34)
 >
-> \#React \#TypeScript \#Styled-Components
-> **Drag&Drop** 기능을 이용해 간단하게 꾸밀 수 있는 **'To-Do List'** 사이트입니다.
-> 여러 개의 Board와 To-Do를 입력할 수 있으며, 자동으로 **Local Storage**에 저장 및 불러옵니다.
-> 처음 접속 시 사용자에게 Tutorial을 보여줍니다.
+> \#React \#TypeScript \#Styled-Components  
+> **Drag&Drop** 기능을 이용해 간단하게 꾸밀 수 있는 **'To-Do List'** 사이트입니다.  
+> 여러 개의 Board와 To-Do를 입력할 수 있으며, 자동으로 **Local Storage**에 저장 및 불러옵니다.  
+> 처음 접속 시 사용자에게 Tutorial을 보여줍니다.  
 > 모바일 기기에서도 잘 보이게끔 **반응형 디자인**을 적용하였으며, 전체적으로 Windows98 느낌이 나도록 꾸몄습니다.
 >
 > - < How to Use? >
